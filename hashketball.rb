@@ -230,4 +230,15 @@ def most_points_scored
   name
 end
 
-
+def player_with_longest_name
+  name = nil
+  
+  game_hash.each do |team, details|
+    details[:players].each do |player|
+      if player[:player_name] > name
+        name = player[:player_name]
+      end
+    end 
+  end
+  name
+end
