@@ -233,11 +233,13 @@ end
 def winning_team
   home = 0 
   away = 0 
+  team = nil
   
   game_hash[:home].each do |name, stats|
     stats.each do |k, v|
       if k == :points
         home = home + v
+        name = game_hash[:home][:team_name]
       end
     end
   end
@@ -246,6 +248,7 @@ def winning_team
     stats.each do |k, v|
       if k == :points
         away = away + v
+        name = game_hash[:away][:team_name]
       end
     end
   end
@@ -257,4 +260,5 @@ def winning_team
   else 
     return "It's a tie!"
   end
+  team
 end
