@@ -260,5 +260,5 @@ def winning_team
   else 
     return "It's a tie!"
   end
-  
+  name
 end
